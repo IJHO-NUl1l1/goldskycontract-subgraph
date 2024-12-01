@@ -1,0 +1,71 @@
+apiVersion: 3
+name: sepolia-factory3-sepolia
+status: ACTIVE
+sources:
+  ethereum_sepolia_bet_placed:
+    type: subgraph_entity
+    subgraphs:
+      - name: FACTORY3-sepolia
+        version: 1.0.0
+    name: bet_placed
+  ethereum_sepolia_claimed:
+    type: subgraph_entity
+    subgraphs:
+      - name: FACTORY3-sepolia
+        version: 1.0.0
+    name: claimed
+  ethereum_sepolia_game_created:
+    type: subgraph_entity
+    subgraphs:
+      - name: FACTORY3-sepolia
+        version: 1.0.0
+    name: game_created
+  ethereum_sepolia_game_ended:
+    type: subgraph_entity
+    subgraphs:
+      - name: FACTORY3-sepolia
+        version: 1.0.0
+    name: game_ended
+  ethereum_sepolia_prize_amount:
+    type: subgraph_entity
+    subgraphs:
+      - name: FACTORY3-sepolia
+        version: 1.0.0
+    name: prize_amount
+transforms: {}
+sinks:
+  s3_ethereum_sepolia_bet_placed:
+    type: file
+    path: s3://mygoldsky-buket/factory-contract
+    format: parquet
+    secret_name: S3_SECRET
+    description: 'S3 sink for: ethereum_sepolia_bet_placed'
+    from: ethereum_sepolia_bet_placed
+  s3_ethereum_sepolia_claimed:
+    type: file
+    path: s3://mygoldsky-buket/factory-contract
+    format: parquet
+    secret_name: S3_SECRET
+    description: 'S3 sink for: ethereum_sepolia_claimed'
+    from: ethereum_sepolia_claimed
+  s3_ethereum_sepolia_game_created:
+    type: file
+    path: s3://mygoldsky-buket/factory-contract
+    format: parquet
+    secret_name: S3_SECRET
+    description: 'S3 sink for: ethereum_sepolia_game_created'
+    from: ethereum_sepolia_game_created
+  s3_ethereum_sepolia_game_ended:
+    type: file
+    path: s3://mygoldsky-buket/factory-contract
+    format: parquet
+    secret_name: S3_SECRET
+    description: 'S3 sink for: ethereum_sepolia_game_ended'
+    from: ethereum_sepolia_game_ended
+  s3_ethereum_sepolia_prize_amount:
+    type: file
+    path: s3://mygoldsky-buket/factory-contract
+    format: parquet
+    secret_name: S3_SECRET
+    description: 'S3 sink for: ethereum_sepolia_prize_amount'
+    from: ethereum_sepolia_prize_amount

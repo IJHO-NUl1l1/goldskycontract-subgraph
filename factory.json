@@ -1,0 +1,18 @@
+{
+    "version": "1",
+    "name": "FACTORY",
+    "abis": {
+      "FACTORY": {
+        "path": "./abi.json"
+      }
+    },
+    "instances": [
+      {
+        "abi": "FACTORY",
+        "address": "0xFa273F31D51DD752f9893024C0A88a792CB5d093",
+        "startBlock": 7184317,
+        "chain": "sepolia"
+      }
+    ]
+  }
+  
